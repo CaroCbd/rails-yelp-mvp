@@ -1,0 +1,11 @@
+<h1>Add a new review </h1>
+<div class="form mb-4">
+  <%= simple_form_for [@restaurant, @review] do |f| %>
+    <%= f.input :content, input_html: { class: "form-control p-3 d-flex flex-col mb-3"}, label: "Describe your experience #{@restaurant.name}" %>
+    <%= f.input :rating, collection: 0..5, input_html: { class: "form-control p-3 d-flex flex-col mb-3"} %>
+    <%= f.submit "Add review", class:"btn btn-primary" %>
+  <% end %>
+</div>
+
+
+<%= link_to "Go back to restaurants", restaurant_path(@restaurant), class:"text-decoration-none text-reset btn btn-info" %>

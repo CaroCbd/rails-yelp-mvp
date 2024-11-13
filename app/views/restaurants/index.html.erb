@@ -1,0 +1,19 @@
+<h1> See all our restaurants </h1>
+
+<div>
+  <% @restaurants.each  do |restaurant| %>
+    <div>
+      <h2>
+        <%= restaurant.name %>
+      </h2>
+      <p>
+        Rating : /5
+      </p>
+      <%= link_to "See more", restaurant_path(restaurant)%>
+    </div>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to "Add a new restaurant", new_restaurant_path %>
+</div>

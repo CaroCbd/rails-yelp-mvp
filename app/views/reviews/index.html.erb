@@ -1,0 +1,12 @@
+<h3>Reviews : </h3>
+
+<div class="flex flex-row">
+  <% @reviews.each do |review| %>
+    <div>
+      <%= review.content%>
+    </div>
+    <div>
+      <%= review.rating%> /5
+    </div>
+  <% end %>
+</div>

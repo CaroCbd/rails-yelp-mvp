@@ -1,0 +1,38 @@
+<h1 class="mt-5 text-center">
+  <%= @restaurant.name %>
+</h1>
+
+<div class="flex flow-row">
+    <p> <%= @restaurant.address %> </p>
+    <a href="tel:<%= @restaurant.phone_number %>"><%= @restaurant.phone_number %></a>
+</div>
+
+
+<p>Reviews : </p>
+
+  <% @reviews.each do |review| %>
+    <div class="d-flex flex-row">
+      <div>
+        <%= review.content%>
+      </div>
+      <div>
+        <%= review.rating%> /5
+      </div>
+    </div>
+  <% end %>
+
+    <!-- <ul>
+      <% @restaurant.reviews do |reviews|%>
+      <div>
+        <%= reviews.content %>
+      </div>
+      <div>
+        <%= reviews.rating %> /5
+      </div>
+    <% end %>
+    </ul> -->
+  </li>
+</ul>
+
+<%= link_to "Add a review", new_restaurant_review_path(@restaurant)%>
+<%= link_to "See reviews", restaurant_reviews_path(@restaurant)%>
